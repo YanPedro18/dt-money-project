@@ -36,7 +36,7 @@ function TransactionContext({ children }: ContextChildren) {
 
    const fetchTransactions = useCallback( async () =>{
     try {
-      const response = await api.get('/transactions');
+      const response = await api.get('https://dt-money-eight-orcin.vercel.app/transactions');
       setPosts(response.data)
       setFilterPosts(response.data)
       
@@ -65,7 +65,7 @@ function TransactionContext({ children }: ContextChildren) {
 
         const { description, category, price, type } = data;
 
-        const response = await api.post('transactions', {
+        const response = await api.post('https://dt-money-eight-orcin.vercel.app/transactions', {
             description,
             category,
             price,
